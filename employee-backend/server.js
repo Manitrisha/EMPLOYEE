@@ -6,11 +6,7 @@ import "dotenv/config";
 
 const app = exp();
 //add cors middleware
-app.use(
-  cors({
-    origin: ["http://localhost:5173"],
-  }),
-);
+app.use(cors());
 //body parser middleware
 app.use(exp.json());
 //emp api middleware
