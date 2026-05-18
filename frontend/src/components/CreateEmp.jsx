@@ -2,6 +2,7 @@ import { useForm } from "react-hook-form";
 import { useState,useContext } from "react";
 import { useNavigate } from "react-router";
 import axios from "axios";
+import { API_URL } from "../config";
 
 
 function CreateEmp() {
@@ -21,7 +22,7 @@ function CreateEmp() {
     try {
       setLoading(true);
       //make HTTP POST req
-      let res = await axios.post("http://localhost:4000/emp-api/employees", newEmpObj);
+      let res = await axios.post(`${API_URL}/emp-api/employees`, newEmpObj);
 
       if (res.status === 201) {
         //navigate to employees component programatically
