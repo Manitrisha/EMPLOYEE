@@ -9,8 +9,8 @@ const app = exp();
 app.use(
   cors({
     origin: [
-      "https://employee-git-main-manitrishas-projects.vercel.app",
-      "https://employee-inky-chi.vercel.app",
+   //   "https://employee-git-main-manitrishas-projects.vercel.app",
+    //"https://employee-inky-chi.vercel.app",
       "http://localhost:5173"
     ],
   })
