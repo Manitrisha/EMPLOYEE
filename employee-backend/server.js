@@ -8,7 +8,11 @@ const app = exp();
 //add cors middleware
 app.use(
   cors({
-    origin: ["https://employee-git-main-manitrishas-projects.vercel.app/", "http://localhost:5173"],
+    origin: [
+      "https://employee-git-main-manitrishas-projects.vercel.app",
+      "https://employee-inky-chi.vercel.app",
+      "http://localhost:5173"
+    ],
   })
 );
 //body parser middleware
