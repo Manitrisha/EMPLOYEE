@@ -6,7 +6,11 @@ import "dotenv/config";
 
 const app = exp();
 //add cors middleware
-app.use(cors());
+app.use(
+  cors({
+    origin: ["https://employee-inky-chi.vercel.app", "http://localhost:5173"],
+  })
+);
 //body parser middleware
 app.use(exp.json());
 //emp api middleware

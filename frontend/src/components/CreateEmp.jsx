@@ -1,10 +1,10 @@
 import { useForm } from "react-hook-form";
 import { useState,useContext } from "react";
 import { useNavigate } from "react-router";
-import { counterContextObj } from "../contexts/ContextProvider";
+import axios from "axios";
+
 
 function CreateEmp() {
-  const {counter , changeCounter}=useContext(counterContextObj);
 
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
@@ -21,24 +21,16 @@ function CreateEmp() {
     try {
       setLoading(true);
       //make HTTP POST req
-      let res = await fetch("http://localhost:4000/emp-api/employees", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(newEmpObj),
-      });
+      let res = await axios.post("http://localhost:4000/emp-api/employees", newEmpObj);
 
       if (res.status === 201) {
         //navigate to employees component programatically
         navigate("/list");
-      } else {
-        let errorRes = await res.json();
-        console.log("error responce is ", errorRes);
-        throw new Error(errorRes.reason);
       }
     } catch (err) {
       console.log("err in catch", err);
       //deal with err
-      setError(err.message);
+      setError(err.response?.data?.reason || err.response?.data?.message || err.message);
     } finally {
       setLoading(false);
     }

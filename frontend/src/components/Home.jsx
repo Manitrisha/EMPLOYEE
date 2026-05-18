@@ -1,13 +1,6 @@
 import { useContext } from "react";
-import { counterContextObj } from "../contexts/ContextProvider";
-import Test from "./Test";
-import { useCounterStore } from "../store/CounterStore";
 function Home() {
-  //call useCounterStore hook to get state of zustand store
-  let newCounter = useCounterStore((state)=>state.newCounter);
-  let incrementCounter = useCounterStore((state)=>state.incrementCounter);
- console.log("Home component rendered");
-  const { counter, changeCounter } = useContext(counterContextObj);
+ 
   return (
     <div >
   <h1 className="p-5 m-5 text-4xl text-yellow-500 text-center font-family-bold"> WELCOME TO EMPLOYEE PORTAL</h1>
