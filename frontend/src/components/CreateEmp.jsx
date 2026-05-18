@@ -47,21 +47,19 @@ function CreateEmp() {
   console.log(error);
 
   if (loading) {
-    return <p className="text-center text-4xl">Loading....</p>;
-  }
-  if (error) {
-    return <p className="text-red-500 text-center text-3xl">{error}</p>;
+    return <p className="text-center text-4xl mt-10">Loading....</p>;
   }
 
   return (
     <div>
-      <div>
-      <h1 classname="text-4xl">Counter : {counter}</h1>
-      <button className="bg-yellow-300 p-5" onClick={changeCounter}>change</button>
-    </div>
-      <h1 className="text-5xl text-center text-gray-600">Create New Employee</h1>
+      <h1 className="text-5xl text-center text-gray-600 mt-10">Create New Employee</h1>
       {/* form */}
       <form className=" max-w-md mx-auto mt-10" onSubmit={handleSubmit(onFormSubmit)}>
+        {error && (
+          <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded-2xl mb-4 text-center">
+            <strong>Error:</strong> {error}
+          </div>
+        )}
         <input
           type="text"
           placeholder="Enter name "

@@ -10,9 +10,9 @@ function Test() {
   
   return (
     <div>
-      <h1 classname="text-4xl">Counter1 : {counter1}</h1>
+      <h1 className="text-4xl">Counter1 : {counter1}</h1>
       <button className="bg-yellow-300 p-5" onClick={changeCounter1}>change</button>
-      <h1 classname="text-4xl">New Counter1 : {newCounter1}</h1>
+      <h1 className="text-4xl">New Counter1 : {newCounter1}</h1>
       <button className="bg-yellow-300 p-5" onClick={incrementCounter1}>Increment New Counter1</button>
     </div>
   )
