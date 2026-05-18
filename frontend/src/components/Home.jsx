@@ -9,12 +9,10 @@ function Home() {
  console.log("Home component rendered");
   const { counter, changeCounter } = useContext(counterContextObj);
   return (
-    <div>
-      <h1 classname="text-4xl">Counter : {counter}</h1>
-      <button className="bg-yellow-300 p-5" onClick={changeCounter}>change</button>
-      <h1 classname="text-4xl">New Counter : {newCounter}</h1>
-      <button className="bg-yellow-300 p-5" onClick={incrementCounter}>Increment New Counter</button>
-      <Test />
+    <div >
+  <h1 className="p-5 m-5 text-4xl text-yellow-500 text-center font-family-bold"> WELCOME TO EMPLOYEE PORTAL</h1>
+  <p className="p-5 m-5 text-2xl  text-center"
+  >Welcome to the Employee Portal, your one-stop platform for managing employee information, tasks, attendance, and company resources efficiently. Stay connected, organized, and productive with easy access to all essential workplace services in one place.</p>
     </div>
     
   )
